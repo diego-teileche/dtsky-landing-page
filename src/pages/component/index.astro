@@ -1,0 +1,132 @@
+---
+import BlueCard from "@components/BlueCard.astro"
+import ComponentWrapper from "@components/ComponentWrapper"
+import { componentsData } from "@content/components"
+import Layout from "@layouts/Layout.astro"
+import Footer from "@sections/Footer.astro"
+import Header from "@sections/Header"
+---
+
+<Layout title="Components" description="All components">
+	<section>
+		<div class="container">
+			<Header client:load>
+				<div class="hidden md:block">
+					<nav class="flex gap-8">
+						<a
+							href="/"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Home
+						</a>
+
+						<a
+							href="/installation"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Installation
+						</a>
+
+						<a
+							href="/about"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							About
+						</a>
+					</nav>
+				</div>
+			</Header>
+
+			<div
+				class="relative flex flex-col items-center py-14 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+			>
+				<div
+					class="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_center_center,rgba(4,61,135,0.5)_15%,rgba(2,15,43,0.5)_78%,transparent)]"
+				>
+				</div>
+
+				<h1
+					class="bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgba(4,61,135,0.5))] bg-clip-text py-14 text-center text-6xl font-semibold tracking-tighter text-transparent md:leading-normal"
+				>
+					All Components
+				</h1>
+
+				<div class="pb-10">
+					<label for="filter" class="text-xl font-semibold text-white"
+						>Filter by type:</label
+					>
+					<select
+						id="filter"
+						name="filter"
+						onchange="filterComponents(e)"
+						class="rounded border border-gray-600 bg-gray-800 p-2 text-white focus:outline-none"
+					>
+						<option value="all">All</option>
+						<option value="button">Buttons</option>
+						<option value="card">Cards</option>
+						<option value="loader">Loaders</option>
+						<option value="random">Random</option>
+						<option value="switch">Switchs</option>
+						<option value="text">Texts</option>
+					</select>
+				</div>
+			</div>
+
+			<div
+				class="grid grid-cols-1 gap-4 px-5 py-10 md:grid-cols-2 lg:grid-cols-3"
+			>
+				{
+					componentsData.map((componentData) => {
+						return (
+							<div
+								class={`component-item col-span-1 cursor-pointer ${componentData.type}`}
+								onclick={`window.location.href='/component/${componentData.slug}'`}
+							>
+								<BlueCard>
+									<div class="flex h-full flex-col gap-20">
+										<h2 class="relative pb-5 text-center text-xl font-semibold text-white">
+											{componentData.name}
+										</h2>
+										<div class="relative inline-flex w-[350px] items-center justify-center">
+											<ComponentWrapper
+												componentName={componentData.component}
+												text={componentData.text}
+												text1={componentData.text1}
+												text2={componentData.text2}
+												client:load
+											>
+												{componentData.text}
+											</ComponentWrapper>
+										</div>
+									</div>
+								</BlueCard>
+							</div>
+						)
+					})
+				}
+			</div>
+		</div>
+
+		<Footer />
+	</section>
+</Layout>
+
+<script>
+	function filterComponents(e: any) {
+		const filter = e.target.value
+		const components = document.querySelectorAll(".component-item")
+
+		components.forEach((component) => {
+			const element = component as HTMLElement
+			if (filter === "all" || element.classList.contains(filter)) {
+				element.style.display = "flex"
+			} else {
+				element.style.display = "none"
+			}
+		})
+	}
+
+	document
+		.getElementById("filter")
+		?.addEventListener("change", filterComponents)
+</script>

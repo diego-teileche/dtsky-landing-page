@@ -1,0 +1,262 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Footer from "@sections/Footer.astro"
+import Header from "@sections/Header"
+---
+
+<Layout
+	title="About"
+	description="Welcome to DTSky, the ultimate React component library crafted to revolutionize your development process. Designed for simplicity and elegance, DTSky offers a diverse range of modern components that seamlessly integrate into any project, enhancing both functionality and aesthetics."
+>
+	<section>
+		<div class="container">
+			<Header client:load>
+				<div class="hidden md:block">
+					<nav class="flex gap-8">
+						<a
+							href="/"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Home
+						</a>
+						<a
+							href="/component"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Components
+						</a>
+						<a
+							href="/installation"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Installation
+						</a>
+					</nav>
+				</div>
+			</Header>
+
+			<div
+				class="relative flex flex-col items-center py-14 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+			>
+				<div
+					class="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_center_center,rgba(4,61,135,0.5)_15%,rgba(2,15,43,0.5)_78%,transparent)]"
+				>
+				</div>
+
+				<h1
+					class="bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgba(4,61,135,0.5))] bg-clip-text py-14 text-center text-6xl font-semibold tracking-tighter text-transparent md:leading-normal"
+				>
+					About DTSky Library
+				</h1>
+			</div>
+
+			<div class="flex flex-col items-center gap-24 py-24">
+				<div class="flex max-w-80 flex-col gap-10 md:max-w-[500px]">
+					<h2 class="text-center text-2xl font-semibold text-neutral-200">
+						Welcome to DTSky
+					</h2>
+					<p class="text-pretty text-center text-lg text-neutral-300">
+						Welcome to DTSky, the ultimate React component library crafted to
+						revolutionize your development process. Designed for simplicity and
+						elegance, DTSky offers a diverse range of modern components that
+						seamlessly integrate into any project, enhancing both functionality
+						and aesthetics.
+					</p>
+				</div>
+
+				<div class="flex max-w-80 flex-col gap-10 md:max-w-[500px]">
+					<h2 class="text-center text-2xl font-semibold text-neutral-200">
+						Our Vision
+					</h2>
+					<p class="text-pretty text-center text-lg text-neutral-300">
+						At DTSky, our vision is to empower developers to create outstanding
+						web applications effortlessly. We believe in delivering
+						high-quality, reusable components that not only save time but also
+						elevate the overall user experience. Our components are meticulously
+						designed to meet the highest standards of modern web development.
+					</p>
+				</div>
+
+				<div class="flex max-w-80 flex-col gap-10 md:max-w-[500px]">
+					<h2 class="text-center text-2xl font-semibold text-neutral-200">
+						Key Features
+					</h2>
+					<ul
+						class="flex max-w-80 flex-col gap-5 text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+					>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Wide Range of Components</span>:
+								From buttons and cards to loaders and text effects, DTSky
+								provides a comprehensive suite of components to meet all your
+								development needs.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Modern Design</span>: Each component
+								is designed with the latest trends in mind, ensuring that your
+								applications look sleek and contemporary.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Ease of Use</span>: With intuitive
+								API and detailed documentation, integrating DTSky components
+								into your projects is a breeze. Our components are built to work
+								seamlessly with React and React-DOM.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Performance Optimized</span>: DTSky
+								components are optimized for performance, ensuring fast load
+								times and smooth interactions.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Regular Updates</span>: We are
+								committed to continuous improvement. New components are added
+								every week, keeping your toolkit fresh and up-to-date with the
+								latest design and development trends.
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="flex max-w-80 flex-col gap-10 md:max-w-[500px]">
+					<h2 class="text-center text-2xl font-semibold text-neutral-200">
+						Our Components
+					</h2>
+					<ul
+						class="flex max-w-80 flex-col gap-5 text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+					>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Buttons</span>: Enhance user
+								interaction with a variety of button components like DT
+								Flashslide Button, DT Hoverhue Button, and DT Lightning Button.
+								Each button offers unique animations and effects to make your
+								applications more engaging.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Cards</span>: Present content in a
+								visually appealing manner with our range of card components such
+								as DT FlashEdge Card, DT FlipFlux Card, and DT Glass Card. These
+								cards are designed to showcase information elegantly and
+								interactively.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Loaders</span>: Keep users engaged
+								during load times with our modern loader components like DT
+								Spectrum Loader and DT Typing Loader. These loaders add a
+								dynamic and captivating element to your applications.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Text Effects</span>: Make your text
+								elements stand out with components like DT NeonText, DT
+								GlitchText, and DT IlluminationText. These text effects add a
+								touch of creativity and flair to your user interface.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Unique Elements</span>: Explore
+								unique components such as DT Alien, DT GhostCubes, and DT
+								HookedCircles. These elements add a distinctive and modern touch
+								to your designs, making them truly unique.
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="flex max-w-80 flex-col gap-10 md:max-w-[500px]">
+					<h2 class="text-center text-2xl font-semibold text-neutral-200">
+						Why Choose DTSky?
+					</h2>
+					<ul
+						class="flex max-w-80 flex-col gap-5 text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+					>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Efficiency</span>: Streamline your
+								development process and reduce time-to-market with ready-to-use
+								components.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Quality</span>: Each component
+								undergoes rigorous testing to ensure it meets our high standards
+								of quality and performance.
+							</p>
+						</li>
+						<li
+							class="flex items-center gap-4 border-l-4 border-l-sky-500 pl-5"
+						>
+							<p>
+								<span class="font-semibold">Community</span>: Join a growing
+								community of developers who trust and contribute to DTSky. Share
+								your feedback and ideas to help us improve and expand the
+								library.
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="flex max-w-80 flex-col gap-10 md:max-w-[500px]">
+					<h2 class="text-center text-2xl font-semibold text-neutral-200">
+						Get Started
+					</h2>
+					<p class="text-pretty text-center text-lg text-neutral-300">
+						Ready to take your development to the next level? Getting started
+						with DTSky is easy. Simply install our library via npm running the
+						command <span class="text-sky-500">npm install dtsky</span> and start
+						integrating our components into your projects. Check out our detailed
+						documentation for step-by-step guides and examples.
+					</p>
+
+					<p class="text-pretty text-center text-lg text-neutral-300">
+						DTSky is here to empower you to create remarkable applications with
+						ease and elegance. We are excited to be part of your development
+						journey. Explore our components, join our community, and experience
+						the difference with DTSky.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<Footer />
+	</section>
+</Layout>

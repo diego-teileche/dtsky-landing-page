@@ -1,12 +1,44 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "@layouts/Layout.astro"
+import About from "@sections/About.astro"
+import { CallToAction } from "@sections/CallToAction"
+import Footer from "@sections/Footer.astro"
+import Header from "@sections/Header"
+import Hero from "@sections/Hero.astro"
 ---
 
 <Layout
 	title="Welcome"
 	description="This is DTSky Webpage with all its documentation. DTSky is a Free and OpenSource React Components Library built by Diego Teileche (Diego Tech)."
 >
+	<Header client:load>
+		<div class="hidden md:block">
+			<nav class="flex gap-8">
+				<a
+					href="/installation"
+					class="text-lg text-white/70 transition hover:text-white"
+				>
+					Installation
+				</a>
+				<a
+					href="/component"
+					class="text-lg text-white/70 transition hover:text-white"
+				>
+					Components
+				</a>
+				<a
+					href="/about"
+					class="text-lg text-white/70 transition hover:text-white"
+				>
+					About
+				</a>
+			</nav>
+		</div>
+	</Header>
 	<main>
-		<h1>Diego</h1>
+		<Hero />
 	</main>
+	<About />
+	<CallToAction client:load />
+	<Footer />
 </Layout>

@@ -1,0 +1,205 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Header from "@sections/Header"
+import CodeBlock from "@components/CodeBlock.astro"
+import Footer from "@sections/Footer.astro"
+import { componentsData } from "@content/components"
+---
+
+<Layout
+	title="Installation"
+	description="Welcome to DTSky, your go-to React component library for sleek and modern design. Follow these simple steps to install and start using DTSky in your projects."
+>
+	<section>
+		<div class="container">
+			<Header client:load>
+				<div class="hidden md:block">
+					<nav class="flex gap-8">
+						<a
+							href="/"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Home
+						</a>
+
+						<a
+							href="/component"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Components
+						</a>
+
+						<a
+							href="/about"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							About
+						</a>
+					</nav>
+				</div>
+			</Header>
+
+			<div
+				class="relative flex flex-col items-center py-14 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+			>
+				<div
+					class="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_center_center,rgba(4,61,135,0.5)_15%,rgba(2,15,43,0.5)_78%,transparent)]"
+				>
+				</div>
+
+				<h1
+					class="bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgba(4,61,135,0.5))] bg-clip-text py-14 text-center text-6xl font-semibold tracking-tighter text-transparent md:leading-normal"
+				>
+					Installation
+				</h1>
+
+				<p
+					class="m-auto max-w-[500px] text-pretty pb-14 text-center text-lg text-neutral-400"
+				>
+					Welcome to DTSky, your go-to React component library for sleek and
+					modern design. Follow these simple steps to install and start using
+					DTSky in your projects.
+				</p>
+			</div>
+
+			<div class="flex flex-col items-center gap-14 py-10">
+				<h2 class="text-2xl font-bold text-white">Prerequisites</h2>
+				<div class="flex flex-col gap-5">
+					<p
+						class="max-w-[300px] text-pretty text-lg font-bold text-neutral-200 md:max-w-[500px]"
+					>
+						Ensure you have the following installed:
+					</p>
+					<ul
+						class="flex max-w-80 flex-col gap-5 text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+					>
+						<li class="flex items-center border-l-4 border-l-sky-500 pl-5">
+							<p>
+								<span class="font-semibold">React</span>: A JavaScript library
+								for building user interfaces.
+							</p>
+						</li>
+						<li class="flex items-center border-l-4 border-l-sky-500 pl-5">
+							<p>
+								<span class="font-semibold">React-DOM</span>: Serves as the
+								entry point to the DOM and server renderers for React.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="flex flex-col items-center gap-14 py-10">
+				<h2 class="text-2xl font-bold text-white">Installation</h2>
+				<div class="flex flex-col items-center gap-5">
+					<div class="flex flex-col gap-10 py-5">
+						<p
+							class="max-w-[300px] text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+						>
+							<span class="font-bold">Install DTSky</span>: Install DTSky via
+							npm by running the following command in your project's root
+							directory:
+						</p>
+						<div class="flex justify-center">
+							<div
+								id="copy-container"
+								class="relative cursor-pointer rounded-lg bg-gradient-to-b from-[#021E43] to-[#043D87] px-3 py-2 text-sm font-medium shadow-[0px_0px_12px_#0461D1]"
+							>
+								<div class="absolute inset-0">
+									<div
+										class="absolute inset-0 rounded-lg border border-white/20 [mask-image:linear-gradient(to_bottom,black,transparent)]"
+									>
+									</div>
+									<div
+										class="absolute inset-0 rounded-lg border border-white/40 [mask-image:linear-gradient(to_top,black,transparent)]"
+									>
+									</div>
+									<div
+										class="absolute inset-0 rounded-lg shadow-[0px_0px_10px_rgba(4,61,135,0.7)_inset]"
+									>
+									</div>
+								</div>
+								<div class="flex items-center gap-2">
+									<span> npm install dtsky </span>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										class="size-4"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"
+										></path>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="flex flex-col items-center gap-10 py-5">
+						<p
+							class="max-w-[300px] text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+						>
+							<span class="font-bold">Using DTSky Components</span>: Once the
+							installation is complete, you can start using DTSky components in
+							your project. Import the desired components into your files. For
+							example:
+						</p>
+						<div
+							class="relative inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-[rgba(5,23,50,1)] via-[rgba(4,61,135,1)] to-[rgba(5,23,50,1)] px-2 py-5 before:absolute before:-inset-0.5 before:-z-10 before:rounded-lg before:bg-gradient-to-r before:from-[rgba(4,61,135,0.5)] before:via-[rgba(5,23,50,1)] before:to-[rgba(4,61,135,0.5)]"
+						>
+							<CodeBlock
+								component={componentsData[2].component}
+								dynamicCode={componentsData[2].code}
+							/>
+						</div>
+					</div>
+
+					<div class="flex flex-col items-center gap-10 py-5">
+						<h2 class="text-2xl font-bold text-white">That's It!</h2>
+						<p
+							class="max-w-[300px] text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+						>
+							You're all set to begin leveraging the power of DTSky in your
+							React applications. Enjoy building with our modern, efficient, and
+							stylish components. Keep an eye out for new components and updates
+							to enhance your development process even further.
+						</p>
+						<p
+							class="max-w-[300px] text-pretty text-lg text-neutral-200 md:max-w-[500px]"
+						>
+							Thank you for choosing DTSky! 🚀✨
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<Footer />
+	</section>
+</Layout>
+
+<script>
+	document
+		.getElementById("copy-container")
+		?.addEventListener("click", function () {
+			const text = "npm install dtsky"
+
+			navigator.clipboard.writeText(text).then(() => {
+				const copyContainer = document.getElementById("copy-container")
+				const originalText = copyContainer ? copyContainer.innerHTML : ""
+
+				if (copyContainer) {
+					copyContainer.innerHTML = "Copied!"
+
+					setTimeout(() => {
+						if (copyContainer) copyContainer.innerHTML = originalText
+					}, 2000)
+				}
+			})
+		})
+</script>

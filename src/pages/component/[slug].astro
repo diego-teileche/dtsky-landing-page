@@ -1,0 +1,179 @@
+---
+import { componentsData } from "@content/components"
+import Layout from "@layouts/Layout.astro"
+import ComponentWrapper from "@components/ComponentWrapper"
+import CodeBlock from "@components/CodeBlock.astro"
+import Header from "@sections/Header"
+import Footer from "@sections/Footer.astro"
+
+export function getStaticPaths() {
+	const paths = componentsData.map((item) => ({
+		params: { slug: item.slug },
+	}))
+
+	return paths
+}
+
+const { slug } = Astro.params
+const componentData = componentsData.find((item) => item.slug === slug)
+
+if (!componentData) throw new Error(`Componente con Slug ${slug} no encontrado`)
+---
+
+<Layout title={componentData.name} description={componentData.description}>
+	<section>
+		<div class="container pb-20">
+			<Header client:load>
+				<div class="hidden md:block">
+					<nav class="flex gap-8">
+						<a
+							href="/"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Home
+						</a>
+						<a
+							href="/component"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Components
+						</a>
+						<a
+							href="/installation"
+							class="text-lg text-white/70 transition hover:text-white"
+						>
+							Installation
+						</a>
+					</nav>
+				</div>
+			</Header>
+
+			<div
+				class="relative flex flex-col items-center py-14 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+			>
+				<div
+					class="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_center_center,rgba(4,61,135,0.5)_15%,rgba(2,15,43,0.5)_78%,transparent)]"
+				>
+				</div>
+
+				<h1
+					class="bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgba(4,61,135,0.5))] bg-clip-text py-14 text-center text-6xl font-semibold tracking-tighter text-transparent md:leading-normal"
+				>
+					{componentData.name}
+				</h1>
+				<p
+					class="m-auto max-w-[500px] text-pretty pb-14 text-center text-lg text-neutral-400"
+				>
+					{componentData.description}
+				</p>
+			</div>
+
+			{
+				componentData.note && (
+					<div class="py-14">
+						<div class="flex flex-col gap-5 border-l-4 border-l-sky-500 bg-neutral-800 p-5">
+							<h3 class="text-2xl font-semibold text-sky-500">Note!</h3>
+							<p class="text-base font-normal text-neutral-300">
+								{componentData.note}
+							</p>
+						</div>
+					</div>
+				)
+			}
+
+			<div
+				class="grid w-full grid-cols-1 gap-5 px-2 pt-10 md:px-2 lg:grid-cols-6 lg:px-0"
+			>
+				<div
+					class="relative flex items-center justify-center rounded-lg bg-gradient-to-br from-[rgba(5,23,50,1)] via-[rgba(4,61,135,1)] to-[rgba(5,23,50,1)] py-20 before:absolute before:-inset-0.5 before:-z-10 before:rounded-lg before:bg-gradient-to-r before:from-[rgba(4,61,135,0.5)] before:via-[rgba(5,23,50,1)] before:to-[rgba(4,61,135,0.5)] lg:col-span-4"
+				>
+					<ComponentWrapper
+						componentName={componentData.component}
+						text={componentData.text}
+						text1={componentData.text1}
+						text2={componentData.text2}
+						client:load
+					>
+						{componentData.text}
+					</ComponentWrapper>
+				</div>
+				<div
+					class="relative inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-[rgba(5,23,50,1)] via-[rgba(4,61,135,1)] to-[rgba(5,23,50,1)] px-5 py-10 before:absolute before:-inset-0.5 before:-z-10 before:rounded-lg before:bg-gradient-to-r before:from-[rgba(4,61,135,0.5)] before:via-[rgba(5,23,50,1)] before:to-[rgba(4,61,135,0.5)] lg:col-span-2"
+				>
+					<CodeBlock
+						component={componentData.component}
+						dynamicCode={componentData.code}
+					/>
+				</div>
+			</div>
+
+			<div
+				class="grid w-full grid-cols-1 gap-5 px-2 py-5 md:grid-cols-6 lg:px-0 lg:py-5"
+			>
+				<div class="md:col-span-2">
+					<div
+						class="relative flex h-full w-full flex-col rounded-lg bg-gradient-to-br from-[rgba(5,23,50,1)] via-[rgba(4,61,135,1)] to-[rgba(5,23,50,1)] before:absolute before:-inset-0.5 before:-z-10 before:rounded-lg before:bg-gradient-to-r before:from-[rgba(4,61,135,0.5)] before:via-[rgba(5,23,50,1)] before:to-[rgba(4,61,135,0.5)]"
+					>
+						<h2
+							class="py-5 text-center text-xl font-bold text-white md:text-2xl lg:text-3xl"
+						>
+							Style Properties
+						</h2>
+						<span
+							class="flex flex-col items-center pb-5 text-base text-green-500 md:text-lg"
+						>
+							{
+								componentData.properties?.map((item: string) => (
+									<div>{item}</div>
+								))
+							}
+						</span>
+					</div>
+				</div>
+
+				<div class="md:col-span-4">
+					<div
+						class="relative flex h-full w-full flex-col rounded-lg bg-gradient-to-br from-[rgba(5,23,50,1)] via-[rgba(4,61,135,1)] to-[rgba(5,23,50,1)] py-5 before:absolute before:-inset-0.5 before:-z-10 before:rounded-lg before:bg-gradient-to-r before:from-[rgba(4,61,135,0.5)] before:via-[rgba(5,23,50,1)] before:to-[rgba(4,61,135,0.5)]"
+					>
+						<h2
+							class="text-center text-xl font-bold text-white md:text-2xl lg:text-3xl"
+						>
+							How to use the Properties
+						</h2>
+						<span
+							class="mt-10 flex h-full w-full flex-col items-center justify-center gap-10 text-sm md:mt-0 md:text-base lg:text-xl"
+						>
+							<div>
+								&lt;<span class="text-sky-500">{componentData.component}</span
+								>&nbsp;
+								<span class="text-orange-400">style</span>&ZeroWidthSpace;=<span
+									class="text-orange-400">&#123;&#123;</span
+								>&nbsp;<span class="text-green-500">
+									{componentData.property}
+								</span>&nbsp;<span class="text-orange-400">&#125;&#125;</span
+								>&gt;
+							</div>
+
+							{
+								componentData.hrefProperty && (
+									<div>
+										&lt;&ZeroWidthSpace;
+										<span class="text-sky-500">{componentData.component}</span>
+										&nbsp;<span class="text-orange-400">href</span>
+										&ZeroWidthSpace;=&ZeroWidthSpace;
+										<span class="text-green-500">
+											&quot;https://example.com&quot;
+										</span>
+										&ZeroWidthSpace;&gt;
+									</div>
+								)
+							}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<Footer />
+	</section>
+</Layout>

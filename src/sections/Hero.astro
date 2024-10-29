@@ -1,0 +1,143 @@
+---
+import { motion } from "framer-motion"
+import starsBg from "../assets/stars.png"
+---
+
+<motion.section
+	animate={{ backgroundPositionX: starsBg.width }}
+	transition={{ repeat: Infinity, ease: "linear", duration: 120 }}
+	className="relative flex h-[492px] items-center overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] md:h-[600px]"
+	style={{ backgroundImage: `url(${starsBg.src})` }}
+	client:load
+>
+	<div
+		class="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgba(4,61,135,0.5)_15%,rgba(2,15,43,0.5)_78%,transparent)]"
+	>
+	</div>
+	<div
+		class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-blue-500 bg-[radial-gradient(50%_50%_at_16.8%_18.3%,white,rgba(119,169,233,1)_37.7%,rgba(5,23,50,1))] shadow-[-20px_-20px_50px_rgba(255,255,255,.5),-20px_-20px_80px_rgba(255,255,255,.1),0_0_50px_rgba(4,61,135,1)] md:h-96 md:w-96"
+	>
+	</div>
+	<motion.div
+		style={{ translateY: "-50%", translateX: "-50%" }}
+		animate={{ rotate: "1turn" }}
+		transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+		className="absolute left-1/2 top-1/2 h-[344px] w-[344px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white opacity-20 md:h-[500px] md:w-[500px]"
+		client:load
+	>
+		<div
+			class="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+		>
+		</div>
+		<div
+			class="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+		>
+		</div>
+		<div
+			class="absolute left-1/2 top-full h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+		>
+		</div>
+		<div
+			class="absolute left-full top-1/2 inline-flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white"
+		>
+			<div class="h-2 w-2 rounded-full bg-white"></div>
+		</div>
+	</motion.div>
+	<motion.div
+		style={{ translateY: "-50%", translateX: "-50%" }}
+		animate={{ rotate: "-1turn" }}
+		transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+		className="absolute left-1/2 top-1/2 h-[444px] w-[444px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/20 md:h-[780px] md:w-[780px]"
+		client:load
+	/>
+	<motion.div
+		style={{ translateY: "-50%", translateX: "-50%" }}
+		animate={{ rotate: "1turn" }}
+		transition={{ repeat: Infinity, duration: 50, ease: "linear" }}
+		className="absolute left-1/2 top-1/2 h-[544px] w-[544px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white opacity-20 md:h-[980px] md:w-[980px]"
+		client:load
+	>
+		<div
+			class="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+		>
+		</div>
+		<div
+			class="absolute left-full top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+		>
+		</div>
+	</motion.div>
+
+	<div class="container relative mt-16">
+		<h1
+			class="bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgba(4,61,135,0.5))] bg-clip-text text-center text-8xl font-semibold tracking-tighter text-transparent md:text-[168px] md:leading-none"
+		>
+			DTSky
+		</h1>
+		<p
+			class="mx-auto mt-5 max-w-xl text-center text-lg text-white/70 md:text-xl"
+		>
+			Transform your web development journey with our React component library,
+			where robust functionality meets sleek design, ensuring a seamless user
+			experience
+		</p>
+		<div class="mt-5 flex justify-center">
+			<div
+				id="copy-container"
+				class="relative cursor-pointer rounded-lg bg-gradient-to-b from-[#021E43] to-[#043D87] px-3 py-2 text-sm font-medium shadow-[0px_0px_12px_#0461D1]"
+			>
+				<div class="absolute inset-0">
+					<div
+						class="absolute inset-0 rounded-lg border border-white/20 [mask-image:linear-gradient(to_bottom,black,transparent)]"
+					>
+					</div>
+					<div
+						class="absolute inset-0 rounded-lg border border-white/40 [mask-image:linear-gradient(to_top,black,transparent)]"
+					>
+					</div>
+					<div
+						class="absolute inset-0 rounded-lg shadow-[0px_0px_10px_rgba(4,61,135,0.7)_inset]"
+					>
+					</div>
+				</div>
+				<div class="flex items-center gap-2">
+					<span> npm install dtsky </span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="size-4"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"
+						></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</motion.section>
+
+<script>
+	document
+		.getElementById("copy-container")
+		?.addEventListener("click", function () {
+			const text = "npm install dtsky"
+
+			navigator.clipboard.writeText(text).then(() => {
+				const copyContainer = document.getElementById("copy-container")
+				const originalText = copyContainer ? copyContainer.innerHTML : ""
+
+				if (copyContainer) {
+					copyContainer.innerHTML = "Copied!"
+
+					setTimeout(() => {
+						if (copyContainer) copyContainer.innerHTML = originalText
+					}, 2000)
+				}
+			})
+		})
+</script>

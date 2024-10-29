@@ -1,0 +1,55 @@
+---
+import Button from "@components/Button"
+---
+
+<section class="relative py-36">
+	<div class="container">
+		<div class="relative flex items-center justify-center gap-24">
+			<div
+				class="absolute -top-10 left-14 size-80 rounded-full bg-[rgba(4,61,135,1)] opacity-30 blur-2xl"
+			>
+			</div>
+
+			<div
+				class="flex max-w-72 flex-col items-center justify-center md:max-w-80 lg:max-w-96"
+			>
+				<p class="text-pretty text-center text-base text-neutral-300">
+					Elevate your development process with DTSky, the React component
+					library designed for simplicity and elegance. From vibrant buttons to
+					sleek cards and stylish switches, DTSky provides essential components
+					that seamlessly integrate into any project. With new components added
+					every week, DTSky keeps your toolkit fresh and versatile. Ideal for
+					developers seeking efficiency without compromising on aesthetics,
+					DTSky empowers you to build outstanding applications with ease.
+					Discover the power of DTSky and streamline your workflow today.
+				</p>
+				<div class="mt-10 flex items-center justify-center gap-5">
+					<Button text="Get started" href="/installation" />
+					<a
+						href="/about"
+						class="group flex items-center gap-2 px-2 py-1 text-base text-sky-600"
+						>Learn more <svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-5 transition-transform duration-300 group-hover:translate-x-1"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+						</svg></a
+					>
+				</div>
+			</div>
+
+			<div
+				class="hidden size-96 items-center justify-center rounded-lg shadow-[0px_0px_23px_#0461D1] md:inline-flex"
+			>
+				<img src="/logo-dtsky.webp" class="size-80" alt="DTSky Logo" />
+			</div>
+		</div>
+	</div>
+</section>
